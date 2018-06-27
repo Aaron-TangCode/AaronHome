@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<script src="static.asserts/js/jquery-3.3.1.min.js"></script>
+<title>铁路投资业务系统</title>
+</head>
+<body>
+	<h2 th:text="${session.userName + '，你好'}"></h2>
+	<div id="hiddenDivUserName" style="visibility: hidden;"></div>
+	<script th:inline="javascript">
+		var userName = [[${session.userName}]]
+		console.log("userName: " + userName)
+		$("#hiddenDivUserName").html(userName)
+		
+	</script>
+	<button onclick="transactA()">办理A事项</button>
+	<button onclick="transactB()">办理B事项</button>
+	<button onclick="transactC()">办理C事项</button>
+	
+	
+	<script src="static.asserts/js/railway_investment.js"></script>
+</body>
+</html>
